@@ -1,12 +1,9 @@
 # TryHackMe - The Game
 
-> **Difficulty:** Easy<br>
-> **Platform:** TryHackMe
-
+> **Difficulty:** Easy
 ## Room Information
 
-- **Room:** The Game
-- **Link:** https://tryhackme.com/room/hfb1thegame
+- **Link:** [The Game](https://tryhackme.com/room/hfb1thegame)
 
 ![Room Banner](images/image.png)
 
