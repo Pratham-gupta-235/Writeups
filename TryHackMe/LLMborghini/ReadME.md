@@ -5,7 +5,7 @@
 
 ## Room Information
 
-![[Poster.png]]
+![Room Banner](image/Poster.png)
 
 - **Room:** [LLMboringhi](https://tryhackme.com/room/llmborghini)
 
