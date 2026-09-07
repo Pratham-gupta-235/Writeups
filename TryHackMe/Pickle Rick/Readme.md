@@ -7,7 +7,7 @@
 - Link: [Pickle Rick](https://tryhackme.com/room/picklerick)
 - Description: The objective of this room is to find the **three ingredients** hidden throughout the machine.
 
-![1.png](1.png)
+![1.png](images/1.png)
 
 ---
 
@@ -15,30 +15,30 @@
 
 Since the scenario tells us that an HTTP service is available, let's start by visiting the web server.
 
-![2.png](2.png)
+![2.png](images/2.png)
 
 The webpage itself doesn't appear to contain anything particularly interesting.
 
 Let's inspect the **page source** to see if the developer left any useful information behind.
 
-![3.png](3.png)
+![3.png](images/3.png)
 
 Bingo! Found a Username.
 Now that we have a potential username, let's investigate whether the server exposes any other interesting pages or directories.
 
 ## 2. Directory Enumeration
 
-![4.png](4.png)
+![4.png](images/4.png)
 
 Let's take a look at the website's assets first.
 
-![5.png](5.png)
+![5.png](images/5.png)
 
 Nothing particularly useful here. 😒
 
 Let's investigate some other directories.
 
-![6.png](6.png)
+![6.png](images/6.png)
 
 **WOW!** We found a login page.
 
@@ -49,7 +49,7 @@ Instead of guessing, let's continue enumerating the website for information that
 
 While exploring the website, we discover another interesting string.
 
-![7.png](7.png)
+![7.png](images/7.png)
 
 I don't know what this string represents yet, so let's test whether it could be the password for the login page.
 
@@ -57,14 +57,14 @@ I don't know what this string represents yet, so let's test whether it could be 
 
 After logging in, we are presented with something much more interesting:
 
-![8.png](8.png)
+![8.png](images/8.png)
 
 a **web shell**.
 > NOTE: A web shell allows us to execute commands on the target machine through the browser.
 
 Let's see what files are available using `ls` command. 
 
-![9.png](9.png)
+![9.png](images/9.png)
 
 **BINGO!** We found our first ingredient.
 
@@ -72,7 +72,7 @@ Let's see what files are available using `ls` command.
 
 Let's try to read the file using the usual `cat` command.
 
-![10.png](10.png)
+![10.png](images/10.png)
 
 It looks like `cat` isn't working.
 
@@ -87,7 +87,7 @@ less
 
 Fortunately, `less` works.
 
-![11.png](11.png)
+![11.png](images/11.png)
 
 And there we have it.
 
@@ -97,7 +97,7 @@ First Ingredient Found! 🥒
 
 There is another interesting file in the current directory.
 
-![17.png](17.png)
+![17.png](images/17.png)
 
 Let's inspect the `/home` directory:
 
@@ -105,7 +105,7 @@ Let's inspect the `/home` directory:
 ls /home
 ```
 
-![12.png](12.png)
+![12.png](images/12.png)
 
 Oh! there is an account belonging to the `rick` user.
 
@@ -113,7 +113,7 @@ Since the room is called Pickle Rick, this looks promising.
 
 Let's investigate the user's directory.
 
-![13.png](13.png)
+![13.png](images/13.png)
 
 **Yup!** We found the second ingredient.
 
@@ -141,7 +141,7 @@ Let's check what commands our current user is allowed to execute with `sudo`:
 sudo -l
 ```
 
-![14.png](14.png)
+![14.png](images/14.png)
 
 Interesting.
 
@@ -151,11 +151,11 @@ In other words, we have a potential **privilege-escalation path**.
 
 Using the permitted command, we can access the remaining file.
 
-![15.png](15.png)
+![15.png](images/15.png)
 
 And there it is:
 
-![16.png](16.png)
+![16.png](images/16.png)
 
  Third Ingredient Found! 🥒
 # Congratulations you have just completed the Pickle Rick challenge!
